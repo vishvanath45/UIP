@@ -1,0 +1,22 @@
+[Default]
+bears = SpaceConsistencyBear
+files = *.*, uiplib/**/*.py,tests/**/*.py
+use_spaces = true
+default_actions =
+        SpaceConsistencyBear: ApplyPatchAction
+
+[Python]
+bears = PEP8Bear, PyUnusedCodeBear
+files = *.py, uiplib/**/*.py, tests/**/*.py
+default_actions =
+        PEP8Bear: ApplyPatchAction
+
+[linelength]  # Sometimes autopep8 makes too long lines, need to check after!
+files = *.py, uiplib/**/*.py, tests/**/*.py
+bears = LineLengthBear
+ignore_length_regex = ^.*https?://
+
+[Documentation]
+bears = PyDocStyleBear
+files = *.py, uiplib/**/*.py
+ignore = **/__init__.py
